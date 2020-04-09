@@ -13,9 +13,9 @@ class MessagesList extends Component {
     return this.fetchMessages();
   }
 
-  componentDidMount() {
-    this.refresher = setInterval(this.fetchMessages, 500);
-  }
+  // componentDidMount() {
+  //   this.refresher = setInterval(this.fetchMessages, 500);
+  // }
 
   componentDidUpdate = (prevProps) => {
     this.list.scrollTop = this.list.scrollHeight;

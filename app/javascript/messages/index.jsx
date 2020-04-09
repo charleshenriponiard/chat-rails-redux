@@ -20,7 +20,8 @@ import App from './components/app';
 
 const initialState = {
   messagesList: [],
-  user: window.prompt('Your user name please ?') || `anonymous${Math.floor(10 + (Math.random() * 90))}`,
+  // window.prompt('Your user name please ?') || 
+  user: `anonymous${Math.floor(10 + (Math.random() * 90))}`, 
   channelsList: ['bordeaux', 'marseille', 'paris', 'general', 'friends']
 };
 
@@ -38,8 +39,8 @@ ReactDOM.render(
   <Provider store={createStore(reducers, initialState, middlewares)}>
     <Router history={history}>
       <Switch>
-        <Route path="/:channel" component={App} />
-        <Redirect from="/" to="/general" />
+        <Route path="/channels/:channel" component={App} />
+        <Redirect from="/" to="/channels" />
       </Switch>
     </Router>
   </Provider>,

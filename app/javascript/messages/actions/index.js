@@ -1,7 +1,8 @@
 // TODO: add and export your own actions
 
 export function selectMessage(channel) {
-  return fetch(`https://wagon-chat.herokuapp.com/${channel}/messages`)
+  const url = `api/v1/channels/${channel}/messages`;
+    return fetch({url})
     .then(response => response.json())
     .then((data) => {
       return {
@@ -16,7 +17,7 @@ export function selectMessage(channel) {
 }
 
 export function createMessage(channel, content, author) {
-  const url = `https://wagon-chat.herokuapp.com/${channel}/messages`
+  const url = `/api/v1/channels/${channel}`
   const body = { content: content, author: author };
   return fetch(url, {
     method: 'POST',
