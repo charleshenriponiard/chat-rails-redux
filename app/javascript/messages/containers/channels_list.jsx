@@ -29,7 +29,7 @@ class ChannelsList extends Component {
     return (
       <div className="channels">
         <h3 style={styles} className="headers">Channel list :</h3>
-        {this.props.channels.map((channel) => <p className={ this.handleClass(channel) } key={channel + Math.random(100000)}><Link to={`/channels/${channel}`}>#{channel.toUpperCase()}</Link></p> )}
+        {this.props.channels.map((channel) => <p className={ this.handleClass(channel) } key={channel + Math.random(100000)}><Link className={ this.handleClass(channel) }  to={`/channels/${channel}`}>#{channel.toUpperCase()}</Link></p> )}
       </div>
     );
   }

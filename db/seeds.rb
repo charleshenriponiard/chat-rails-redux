@@ -8,12 +8,14 @@
 
 puts 'drop all db'
 
-Channel.delete_all
 Message.delete_all
+User.delete_all
+Channel.delete_all
 
 bordeaux = Channel.create!(name: "bordeaux")
 paris = Channel.create!(name: "paris")
 marseille = Channel.create!(name: "marseille")
-bordeau = Channel.create!(name: "general")
+general = Channel.create!(name: "general")
+friends = Channel.create!(name: "friends")
 
 puts "chanels created ! "

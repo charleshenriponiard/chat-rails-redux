@@ -13,9 +13,9 @@ class MessagesList extends Component {
     return this.fetchMessages();
   }
 
-  // componentDidMount() {
-  //   this.refresher = setInterval(this.fetchMessages, 500);
-  // }
+  componentDidMount() {
+    this.refresher = setInterval(this.fetchMessages, 500);
+  }
 
   componentDidUpdate = (prevProps) => {
     this.list.scrollTop = this.list.scrollHeight;
@@ -38,7 +38,7 @@ class MessagesList extends Component {
       const { messages } = this.props;
       const styles = {
         borderBottom: "1px solid rgb(244, 244, 244)",
-        paddingBottom: "30px",
+        paddingBottom: "20px",
         color: "rgb(70, 70, 90)"
       }
       return (

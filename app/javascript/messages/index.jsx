@@ -16,7 +16,6 @@ import messagesReducer from './reducers/messages_reducer';
 
 // internal modules
 import App from './components/app';
-// import '../assets/stylesheets/application.scss';
 
 const initialState = {
   messagesList: [],
@@ -32,7 +31,6 @@ const reducers = combineReducers(
     messagesList: messagesReducer
   });
 
-
 const middlewares = applyMiddleware(reduxPromise, logger);
 
 ReactDOM.render(
@@ -40,7 +38,6 @@ ReactDOM.render(
     <Router history={history}>
       <Switch>
         <Route path="/channels/:channel" component={App} />
-        <Redirect from="/" to="/channels" />
       </Switch>
     </Router>
   </Provider>,

@@ -1,13 +1,12 @@
 // TODO: add and export your own actions
 
 export function selectMessage(channel) {
-  const url = `api/v1/channels/${channel}/messages`;
-    return fetch({url})
+    return fetch(`/api/v1/channels/${channel}/messages`)
     .then(response => response.json())
     .then((data) => {
       return {
         type: 'SELECT_MESSAGE',
-        payload: data.messages
+        payload: data
       };
     })
     .catch((error) => {
@@ -17,9 +16,9 @@ export function selectMessage(channel) {
 }
 
 export function createMessage(channel, content, author) {
-  const url = `/api/v1/channels/${channel}`
   const body = { content: content, author: author };
-  return fetch(url, {
+  console.log(body, "body");
+  return fetch(`/api/v1/channels/${channel}/messages`, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',

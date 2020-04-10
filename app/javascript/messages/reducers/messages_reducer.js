@@ -1,8 +1,4 @@
-export default function (state, action) {
-  if (state === undefined) {
-    return null;
-  }
-
+export default function(state = null, action) {
   switch (action.type) {
     case 'SELECT_MESSAGE':
       return action.payload;
