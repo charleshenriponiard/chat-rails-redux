@@ -7,7 +7,7 @@ class Api::V1::MessagesController < ActionController::Base
     @messages = Message.where(channel: @channel).map do |message|
       {
         "id": message.id,
-        "author": message.user.email,
+        "author": message.user.name,
         "content": message.content,
         "created_at": message.created_at
       }
@@ -20,7 +20,7 @@ class Api::V1::MessagesController < ActionController::Base
     if message.save
       new_message = {
         "id": message.id,
-        "author": message.user.email,
+        "author": message.user.name,
         "content": message.content,
         "created_at": message.created_at
       }
